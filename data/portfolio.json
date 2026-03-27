@@ -1,0 +1,419 @@
+{
+  "profile": {
+    "name": "Utsav Anand",
+    "role": "Backend-Focused Software Developer",
+    "location": "Bangalore, India",
+    "tagline": "I build practical software across chatbots, web platforms, mobile apps, and systems programming.",
+    "about": "I enjoy building real software that solves day-to-day problems, especially products that combine backend logic, clean user experience, and practical deployment. I have worked on chatbot systems, Android projects, and full-stack web apps, and I like shipping projects end-to-end.",
+    "email": "utsavanand0209@gmail.com",
+    "phone": "+91-7091868566",
+    "photo": "./assets/profile.jpg",
+    "resume": "./assets/utsav_anand_resume_backend_sde.pdf",
+    "focus": [
+      "Full-Stack Web",
+      "Conversational AI",
+      "Android Apps"
+    ],
+    "contact": {
+      "lead": "I am open to internships, backend roles, and product collaborations. Send me a message and I will get back to you soon."
+    },
+    "social": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/utsavanand0209"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/utsav02/"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:utsavanand0209@gmail.com"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "Ayurvedic-Treatment",
+      "path": "/Users/utsavanand/Ayurvedic-Treatment",
+      "status": "working",
+      "kind": "Android",
+      "summary": "Legacy Android app focused on Ayurvedic treatment workflows.",
+      "tools": [
+        "Android",
+        "Java",
+        "Gradle",
+        "Google Maps API",
+        "Volley"
+      ],
+      "highlights": [
+        "Designed a structured flow for treatment-oriented content.",
+        "Integrated map and networking features in a legacy Android stack.",
+        "Documented setup and compatibility steps for smooth local onboarding."
+      ],
+      "note": "Legacy Android project with documented compatibility requirements.",
+      "description": "An Android health-information product that organizes Ayurvedic treatment guidance into a structured mobile flow with location-aware discovery support.",
+      "architecture": "Java Android app with activity-based navigation, Volley networking, Google Maps integration, and Gradle-based build orchestration.",
+      "impact": "Showcased legacy mobile maintenance, compatibility handling, and feature stability improvements for real users.",
+      "skillsShowcased": [
+        "Legacy App Modernization",
+        "Android Lifecycle",
+        "API Integration",
+        "Gradle Debugging"
+      ]
+    },
+    {
+      "name": "Ngo-Connect",
+      "path": "/Users/utsavanand/Ngo-Connect",
+      "status": "working",
+      "kind": "Full Stack",
+      "summary": "NGO platform with backend APIs, frontend interface, and smoke-tested workflows.",
+      "tools": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "React",
+        "REST API"
+      ],
+      "highlights": [
+        "Implemented core API and role-based product flows for NGO operations.",
+        "Added smoke coverage for high-value donation and volunteering journeys.",
+        "Verified backend startup and frontend build on local environment."
+      ],
+      "description": "A full-stack NGO operations platform that supports donation and volunteering workflows with role-aware interfaces and robust backend APIs.",
+      "architecture": "React frontend + Node.js/Express service layer + PostgreSQL relational data model with REST API contracts.",
+      "impact": "Delivered a structured social-impact workflow and validated high-value journeys through smoke-tested flows.",
+      "skillsShowcased": [
+        "API Design",
+        "Database Modeling",
+        "Role-Based Access",
+        "End-to-End Testing"
+      ]
+    },
+    {
+      "name": "advanced-chatbot",
+      "path": "/Users/utsavanand/advanced-chatbot",
+      "status": "working",
+      "kind": "Conversational AI",
+      "summary": "Rasa-based chatbot with custom actions and validated training data.",
+      "tools": [
+        "Python",
+        "Rasa",
+        "TensorFlow",
+        "NLU",
+        "Custom Actions"
+      ],
+      "highlights": [
+        "Built custom action logic to handle dynamic bot responses.",
+        "Repaired local TensorFlow environment and validated Rasa data pipeline.",
+        "Prepared project for iterative improvement of intents and stories."
+      ],
+      "description": "A conversational AI assistant built with Rasa that handles intent understanding, dialogue management, and dynamic custom actions.",
+      "architecture": "Rasa NLU pipeline + story/rule policy graph + Python custom action server integrated with TensorFlow runtime.",
+      "impact": "Improved response quality and maintainability by introducing reusable action logic and validated training data flows.",
+      "skillsShowcased": [
+        "Conversational AI",
+        "Intent Design",
+        "Custom Python Actions",
+        "NLU Debugging"
+      ]
+    },
+    {
+      "name": "Android-Chat-App",
+      "path": "/Users/utsavanand/programming/Android-Chat-App",
+      "status": "working",
+      "kind": "Android",
+      "summary": "Realtime Android chat application integrated with Firebase services.",
+      "tools": [
+        "Android",
+        "Java",
+        "Firebase Auth",
+        "Firebase Realtime Database",
+        "Gradle"
+      ],
+      "highlights": [
+        "Implemented chat and authentication workflows with Firebase.",
+        "Modernized app dependencies and SDK targets over time.",
+        "Documented environment setup to make local execution reproducible."
+      ],
+      "note": "Android chat app with Firebase integration and setup notes.",
+      "description": "Realtime chat application for Android featuring authentication, instant message sync, and persistent conversation history.",
+      "architecture": "Android Java client with Firebase Authentication and Firebase Realtime Database for low-latency messaging.",
+      "impact": "Demonstrated practical realtime mobile architecture and reliable auth + messaging integration.",
+      "skillsShowcased": [
+        "Realtime Messaging",
+        "Firebase Auth",
+        "Android UI Architecture",
+        "Mobile Data Sync"
+      ]
+    },
+    {
+      "name": "AzureProjects",
+      "path": "/Users/utsavanand/programming/cc_project/AzureProjects",
+      "status": "working",
+      "kind": "Cloud Documentation",
+      "summary": "Azure deployment tasks, reports, and supporting cloud delivery documentation.",
+      "tools": [
+        "Azure",
+        "Cloud Docs",
+        "Infrastructure"
+      ],
+      "highlights": [
+        "Captured step-by-step cloud deployment workflow.",
+        "Stored visual evidence and summary notes for infra tasks.",
+        "Maintained as a polished documentation project for cloud operations."
+      ],
+      "description": "A cloud implementation and reporting workspace containing Azure deployment tasks, infrastructure notes, and execution evidence.",
+      "architecture": "Azure service configuration workflows paired with structured documentation artifacts and operational runbooks.",
+      "impact": "Built deployment confidence through repeatable cloud documentation and traceable delivery records.",
+      "skillsShowcased": [
+        "Cloud Operations",
+        "Deployment Documentation",
+        "Infrastructure Concepts",
+        "Environment Setup"
+      ]
+    },
+    {
+      "name": "internship-yuva",
+      "path": "/Users/utsavanand/programming/internship-yuva",
+      "status": "working",
+      "kind": "Backend",
+      "summary": "Python project with tested service logic and passing pytest suite.",
+      "tools": [
+        "Python",
+        "Flask",
+        "Pytest",
+        "SQLite"
+      ],
+      "highlights": [
+        "Developed service layer and data handling flows.",
+        "Maintained automated tests with full local pass.",
+        "Used structured modules to keep business logic clean."
+      ],
+      "description": "Backend-focused Python service project built with test-first habits and clean modular business logic.",
+      "architecture": "Flask application layer with SQLite persistence, service abstraction modules, and Pytest verification suite.",
+      "impact": "Improved reliability through automated tests and a maintainable service-oriented code structure.",
+      "skillsShowcased": [
+        "Python Backend",
+        "Service Layer Design",
+        "Automated Testing",
+        "Data Handling"
+      ]
+    },
+    {
+      "name": "wells-fargo-task-2",
+      "path": "/Users/utsavanand/programming/intership-forage/wells-fargo-task-2",
+      "status": "working",
+      "kind": "Backend",
+      "summary": "Spring Boot Java assignment validated with Maven wrapper tests.",
+      "tools": [
+        "Java",
+        "Spring Boot",
+        "Maven",
+        "JPA"
+      ],
+      "highlights": [
+        "Resolved compilation blocker in entity package declaration.",
+        "Verified project through Maven wrapper based build/test flow.",
+        "Used JPA entities for clean domain modeling."
+      ],
+      "description": "Enterprise-style Java backend assignment emphasizing domain modeling, compilation correctness, and Maven-driven validation.",
+      "architecture": "Spring Boot application using JPA entities and Maven wrapper lifecycle for build/test automation.",
+      "impact": "Resolved structural blockers and delivered a passing backend artifact through disciplined debugging.",
+      "skillsShowcased": [
+        "Spring Boot",
+        "JPA Modeling",
+        "Java Debugging",
+        "Maven Workflows"
+      ]
+    },
+    {
+      "name": "ext4fuse",
+      "path": "/Users/utsavanand/programming/learning/ext4fuse",
+      "status": "working",
+      "kind": "Systems",
+      "summary": "Filesystem utility build that compiles with Make and runs locally.",
+      "tools": [
+        "C",
+        "FUSE",
+        "Make",
+        "Linux Filesystems"
+      ],
+      "highlights": [
+        "Built and validated local binary via Make.",
+        "Explored low-level filesystem interaction patterns.",
+        "Kept project lightweight and reproducible."
+      ],
+      "description": "Low-level systems project exploring ext4 access patterns from user space using a FUSE-based implementation.",
+      "architecture": "C codebase with Make-driven compilation and FUSE interface for filesystem operations.",
+      "impact": "Strengthened systems programming skills through practical filesystem internals experimentation.",
+      "skillsShowcased": [
+        "Systems Programming",
+        "C Toolchain",
+        "Filesystem Concepts",
+        "Build Engineering"
+      ]
+    },
+    {
+      "name": "task-tracker",
+      "path": "/Users/utsavanand/task-tracker",
+      "status": "working",
+      "kind": "Full Stack",
+      "summary": "Task management app with React frontend, TypeScript backend, and WebAuthn flows.",
+      "tools": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Express",
+        "WebAuthn"
+      ],
+      "highlights": [
+        "Fixed backend and frontend compatibility with latest WebAuthn APIs.",
+        "Stabilized shared TypeScript build configuration across packages.",
+        "Verified frontend build and backend startup in local run."
+      ],
+      "description": "Modern productivity app with secure login, task lifecycle management, and full-stack TypeScript coordination.",
+      "architecture": "React + Vite frontend, Express backend, shared TypeScript contracts, and WebAuthn authentication flow.",
+      "impact": "Delivered stronger authentication UX and improved cross-package stability in a multi-part codebase.",
+      "skillsShowcased": [
+        "TypeScript Monorepo",
+        "WebAuthn",
+        "API Integration",
+        "Frontend-Backend Contracts"
+      ]
+    },
+    {
+      "name": "triage-bot",
+      "path": "/Users/utsavanand/triage-bot",
+      "status": "working",
+      "kind": "Web App",
+      "summary": "Flask triage assistant with guided symptom intake flow.",
+      "tools": [
+        "Python",
+        "Flask",
+        "HTML",
+        "Jinja"
+      ],
+      "highlights": [
+        "Designed a guided multi-step symptom intake conversation.",
+        "Added reproducible dependency setup via requirements file.",
+        "Validated import and startup flow in isolated virtual env."
+      ],
+      "description": "A guided web triage assistant that collects symptoms in a conversational sequence and organizes user responses.",
+      "architecture": "Flask server-rendered app using Jinja templates and structured multi-step intake logic.",
+      "impact": "Enabled clearer symptom capture pathways and improved user guidance for health intake scenarios.",
+      "skillsShowcased": [
+        "Flask Web Apps",
+        "Conversation Flow Design",
+        "Template Rendering",
+        "Input Validation"
+      ]
+    },
+    {
+      "name": "blog-platform-backend",
+      "path": "/Users/utsavanand/Downloads/blog-platform/blog-platform-backend",
+      "status": "working",
+      "kind": "Backend",
+      "summary": "Express + MongoDB API for blog post creation and retrieval.",
+      "tools": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose"
+      ],
+      "highlights": [
+        "Created API endpoints for creating and listing posts.",
+        "Integrated MongoDB model layer with Mongoose.",
+        "Validated backend startup on alternate free port."
+      ],
+      "description": "RESTful blog API that supports publishing and retrieval flows with document-based persistence.",
+      "architecture": "Node.js + Express service endpoints with Mongoose ODM and MongoDB collections.",
+      "impact": "Established reusable backend patterns for content products and API-first frontend consumption.",
+      "skillsShowcased": [
+        "REST APIs",
+        "MongoDB",
+        "Express Routing",
+        "Schema Modeling"
+      ]
+    },
+    {
+      "name": "blog-platform-frontend",
+      "path": "/Users/utsavanand/Downloads/blog-platform/blog-platform-frontend",
+      "status": "working",
+      "kind": "Frontend",
+      "summary": "Frontend app for blog interaction running on webpack dev server.",
+      "tools": [
+        "React",
+        "JavaScript",
+        "Webpack"
+      ],
+      "highlights": [
+        "Developed frontend pages for content browsing and interaction.",
+        "Configured local dev server workflow for quick iteration.",
+        "Verified build/compile success during validation."
+      ],
+      "description": "Client-side blog interface for viewing and interacting with published content from backend APIs.",
+      "architecture": "React component architecture bundled with Webpack and connected to REST endpoints.",
+      "impact": "Created a responsive, reusable frontend layer suitable for iterative product enhancement.",
+      "skillsShowcased": [
+        "React Components",
+        "Stateful UI",
+        "Frontend Build Tooling",
+        "API Consumption"
+      ]
+    },
+    {
+      "name": "fitness-tracker-backend",
+      "path": "/Users/utsavanand/Downloads/fitness-tracker/fitness-tracker-backend",
+      "status": "working",
+      "kind": "Backend",
+      "summary": "Fitness logs API using Node.js, Express, and MongoDB.",
+      "tools": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose"
+      ],
+      "highlights": [
+        "Implemented API endpoints for fitness log storage and retrieval.",
+        "Connected data model layer with MongoDB persistence.",
+        "Validated runtime behavior locally."
+      ],
+      "description": "Backend service for fitness records with endpoint-driven log creation, retrieval, and storage consistency.",
+      "architecture": "Express routes + Mongoose models + MongoDB database for persistent fitness data operations.",
+      "impact": "Enabled reliable fitness data pipelines with clean API boundaries for frontend clients.",
+      "skillsShowcased": [
+        "Backend APIs",
+        "Database Integration",
+        "Node Ecosystem",
+        "Data Validation"
+      ]
+    },
+    {
+      "name": "fitness-tracker-frontend",
+      "path": "/Users/utsavanand/Downloads/fitness-tracker/fitness-tracker-frontend",
+      "status": "working",
+      "kind": "Frontend",
+      "summary": "UI client for fitness logs with React and a local dev server workflow.",
+      "tools": [
+        "React",
+        "JavaScript",
+        "Webpack"
+      ],
+      "highlights": [
+        "Built client-side interface for tracking and viewing logs.",
+        "Used React component architecture for reusable UI blocks.",
+        "Confirmed local startup and successful compile."
+      ],
+      "description": "Interactive frontend for tracking workouts and reviewing activity history with a reusable component structure.",
+      "architecture": "React UI bundled by Webpack, consuming backend endpoints for realtime-like log updates.",
+      "impact": "Improved user visibility into fitness progress through clear, task-oriented interface flows.",
+      "skillsShowcased": [
+        "UI Engineering",
+        "React State Management",
+        "Frontend Integration",
+        "User-Centric Design"
+      ]
+    }
+  ]
+}

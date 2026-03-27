@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utsav Anand | Dynamic Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient-layer" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="hero reveal-section">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="kicker">Portfolio Engineering</p>
+            <h1 id="name">Loading profile...</h1>
+            <p id="tagline" class="tagline"></p>
+            <div id="heroMeta" class="hero-meta"></div>
+            <div id="heroContact" class="hero-contact"></div>
+            <div class="hero-actions">
+              <a id="resumeButton" class="primary-btn" href="#" target="_blank" rel="noreferrer">
+                Download Resume
+              </a>
+              <a id="emailButton" class="ghost-btn" href="#">Email Me</a>
+            </div>
+          </div>
+
+          <aside class="hero-photo-card">
+            <img
+              id="profilePhoto"
+              src=""
+              alt="Profile photo"
+              loading="eager"
+              decoding="async"
+            />
+          </aside>
+        </div>
+      </header>
+
+      <section class="overview-grid reveal-section">
+        <article class="about-card">
+          <div class="section-head compact">
+            <h2>About Me</h2>
+          </div>
+          <p id="aboutText" class="about-text"></p>
+          <ul id="focusList" class="focus-list"></ul>
+          <div id="socialLinks" class="social-links"></div>
+        </article>
+
+        <article class="tools-card">
+          <div class="section-head compact">
+            <h2>Skills And Tooling</h2>
+          </div>
+          <p class="tools-intro">
+            This dashboard maps my strongest engineering zones based on shipped projects.
+          </p>
+          <div id="skillSignals" class="skill-signals"></div>
+          <div id="toolConstellation" class="tool-constellation"></div>
+          <div id="topTools" class="top-tools"></div>
+        </article>
+      </section>
+
+      <section class="controls reveal-section">
+        <label class="search-wrap" for="searchInput">
+          <span>Search by project, tool, or stack</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Try: React, Android, Rasa..."
+            autocomplete="off"
+          />
+        </label>
+
+        <div class="filters-block">
+          <p class="label">Skill Lens</p>
+          <div id="skillFilters" class="pill-row"></div>
+        </div>
+
+        <div class="filters-block">
+          <p class="label">Tools</p>
+          <div id="toolFilters" class="pill-row"></div>
+        </div>
+      </section>
+
+      <section class="projects-section reveal-section">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p id="resultsCount"></p>
+        </div>
+        <div id="projectGrid" class="project-grid"></div>
+        <p id="emptyState" class="empty-state hidden">
+          No project matched this filter yet. Try clearing one filter.
+        </p>
+      </section>
+
+      <section class="contact-section reveal-section">
+        <div class="section-head">
+          <h2>Contact Me</h2>
+          <p id="contactHint" class="muted"></p>
+        </div>
+        <p id="contactLead" class="contact-lead"></p>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you're human:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button type="submit" class="primary-btn">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <section id="projectModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal="true"></div>
+      <article
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button id="modalClose" class="modal-close" type="button" aria-label="Close details">
+          Close
+        </button>
+        <p id="modalKind" class="modal-kind"></p>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalSummary" class="modal-summary"></p>
+        <p id="modalPath" class="modal-path"></p>
+        <div id="modalStatus" class="modal-status"></div>
+        <div id="modalTools" class="tool-chips"></div>
+        <ul id="modalHighlights" class="modal-highlights"></ul>
+        <div id="modalLinks" class="modal-links"></div>
+      </article>
+    </section>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
