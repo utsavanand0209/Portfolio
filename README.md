@@ -2,6 +2,11 @@
 
 Static, data-driven portfolio website for Utsav Anand.
 
+## Live URLs
+
+- Primary (GitHub Pages): `https://utsavanand0209.github.io/Portfolio/`
+- Backup (Netlify): `https://utsav-anand-portfolio.netlify.app`
+
 ## Local Preview
 
 ```bash

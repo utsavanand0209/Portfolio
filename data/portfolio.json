@@ -19,6 +19,14 @@
     },
     "social": [
       {
+        "label": "Portfolio",
+        "url": "https://utsavanand0209.github.io/Portfolio/"
+      },
+      {
+        "label": "Portfolio (Netlify)",
+        "url": "https://utsav-anand-portfolio.netlify.app"
+      },
+      {
         "label": "GitHub",
         "url": "https://github.com/utsavanand0209"
       },
