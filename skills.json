@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Express",
+    "icon": "https://img.icons8.com/fluency/48/express-js.png"
+  },
+  {
+    "name": "React",
+    "icon": "https://img.icons8.com/color/48/000000/react-native.png"
+  },
+  {
+    "name": "Java",
+    "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
+  },
+  {
+    "name": "Node.js",
+    "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
+  },
+  {
+    "name": "Python",
+    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+  },
+  {
+    "name": "Android",
+    "icon": "https://img.icons8.com/color/48/000000/android-os.png"
+  },
+  {
+    "name": "Gradle",
+    "icon": "https://img.icons8.com/color/48/gradle.png"
+  },
+  {
+    "name": "Flask",
+    "icon": "https://img.icons8.com/fluency/48/flask.png"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
+  },
+  {
+    "name": "Mongoose",
+    "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+  },
+  {
+    "name": "Webpack",
+    "icon": "https://img.icons8.com/color/48/webpack.png"
+  },
+  {
+    "name": "Google Maps API",
+    "icon": "https://img.icons8.com/color/48/000000/google-maps-new.png"
+  },
+  {
+    "name": "Volley",
+    "icon": "https://img.icons8.com/color/48/000000/networking-manager.png"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
+  },
+  {
+    "name": "REST API",
+    "icon": "https://img.icons8.com/color/48/000000/api-settings.png"
+  },
+  {
+    "name": "Rasa",
+    "icon": "https://img.icons8.com/color/48/000000/chatbot.png"
+  },
+  {
+    "name": "TensorFlow",
+    "icon": "https://img.icons8.com/color/48/000000/tensorflow.png"
+  },
+  {
+    "name": "NLU",
+    "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png"
+  },
+  {
+    "name": "Custom Actions",
+    "icon": "https://img.icons8.com/color/48/000000/workflow.png"
+  },
+  {
+    "name": "Firebase Auth",
+    "icon": "https://img.icons8.com/color/48/000000/firebase.png"
+  },
+  {
+    "name": "Firebase Realtime Database",
+    "icon": "https://img.icons8.com/color/48/000000/firebase.png"
+  },
+  {
+    "name": "Azure",
+    "icon": "https://img.icons8.com/color/48/000000/azure-1.png"
+  },
+  {
+    "name": "Cloud Docs",
+    "icon": "https://img.icons8.com/color/48/000000/document--v1.png"
+  }
+]

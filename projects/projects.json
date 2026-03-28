@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Ayurvedic-Treatment",
+    "desc": "Legacy Android app focused on Ayurvedic treatment workflows. Showcased legacy mobile maintenance, compatibility handling, and feature stability improvements for real users. Tools: Android, Java, Gradle, Google Maps API",
+    "image": "ayurvedic-treatment",
+    "category": "mobile",
+    "links": {
+      "view": "https://github.com/utsavanand0209/Ayurvedic-Treatment",
+      "code": "https://github.com/utsavanand0209/Ayurvedic-Treatment"
+    }
+  },
+  {
+    "name": "Ngo-Connect",
+    "desc": "NGO platform with backend APIs, frontend interface, and smoke-tested workflows. Delivered a structured social-impact workflow and validated high-value journeys through smoke-tested flows. Tools: Node.js, Express, PostgreSQL, React",
+    "image": "ngo-connect",
+    "category": "fullstack",
+    "links": {
+      "view": "https://github.com/utsavanand0209/Ngo-Connect",
+      "code": "https://github.com/utsavanand0209/Ngo-Connect"
+    }
+  },
+  {
+    "name": "advanced-chatbot",
+    "desc": "Rasa-based chatbot with custom actions and validated training data. Improved response quality and maintainability by introducing reusable action logic and validated training data flows. Tools: Python, Rasa, TensorFlow, NLU",
+    "image": "advanced-chatbot",
+    "category": "ai",
+    "links": {
+      "view": "https://github.com/utsavanand0209/advanced-chatbot",
+      "code": "https://github.com/utsavanand0209/advanced-chatbot"
+    }
+  },
+  {
+    "name": "Android-Chat-App",
+    "desc": "Realtime Android chat application integrated with Firebase services. Demonstrated practical realtime mobile architecture and reliable auth + messaging integration. Tools: Android, Java, Firebase Auth, Firebase Realtime Database",
+    "image": "android-chat-app",
+    "category": "mobile",
+    "links": {
+      "view": "https://github.com/utsavanand0209/Android-Chat-App",
+      "code": "https://github.com/utsavanand0209/Android-Chat-App"
+    }
+  },
+  {
+    "name": "AzureProjects",
+    "desc": "Azure deployment tasks, reports, and supporting cloud delivery documentation. Built deployment confidence through repeatable cloud documentation and traceable delivery records. Tools: Azure, Cloud Docs, Infrastructure",
+    "image": "azureprojects",
+    "category": "cloud",
+    "links": {
+      "view": "https://github.com/utsavanand0209/AzureProjects",
+      "code": "https://github.com/utsavanand0209/AzureProjects"
+    }
+  },
+  {
+    "name": "internship-yuva",
+    "desc": "Python project with tested service logic and passing pytest suite. Improved reliability through automated tests and a maintainable service-oriented code structure. Tools: Python, Flask, Pytest, SQLite",
+    "image": "internship-yuva",
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/internship-yuva",
+      "code": "https://github.com/utsavanand0209/internship-yuva"
+    }
+  },
+  {
+    "name": "wells-fargo-task-2",
+    "desc": "Spring Boot Java assignment validated with Maven wrapper tests. Resolved structural blockers and delivered a passing backend artifact through disciplined debugging. Tools: Java, Spring Boot, Maven, JPA",
+    "image": "wells-fargo-task-2",
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/wells-fargo-task-2",
+      "code": "https://github.com/utsavanand0209/wells-fargo-task-2"
+    }
+  },
+  {
+    "name": "ext4fuse",
+    "desc": "Filesystem utility build that compiles with Make and runs locally. Strengthened systems programming skills through practical filesystem internals experimentation. Tools: C, FUSE, Make, Linux Filesystems",
+    "image": "ext4fuse",
+    "category": "systems",
+    "links": {
+      "view": "https://github.com/utsavanand0209/ext4fuse",
+      "code": "https://github.com/utsavanand0209/ext4fuse"
+    }
+  },
+  {
+    "name": "task-tracker",
+    "desc": "Task management app with React frontend, TypeScript backend, and WebAuthn flows. Delivered stronger authentication UX and improved cross-package stability in a multi-part codebase. Tools: TypeScript, React, Vite, Express",
+    "image": "task-tracker",
+    "category": "fullstack",
+    "links": {
+      "view": "https://github.com/utsavanand0209/task-tracker",
+      "code": "https://github.com/utsavanand0209/task-tracker"
+    }
+  },
+  {
+    "name": "triage-bot",
+    "desc": "Flask triage assistant with guided symptom intake flow. Enabled clearer symptom capture pathways and improved user guidance for health intake scenarios. Tools: Python, Flask, HTML, Jinja",
+    "image": "triage-bot",
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/triage-bot",
+      "code": "https://github.com/utsavanand0209/triage-bot"
+    }
+  },
+  {
+    "name": "blog-platform-backend",
+    "desc": "Express + MongoDB API for blog post creation and retrieval. Established reusable backend patterns for content products and API-first frontend consumption. Tools: Node.js, Express, MongoDB, Mongoose",
+    "image": "blog-platform-backend",
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/blog-platform-backend",
+      "code": "https://github.com/utsavanand0209/blog-platform-backend"
+    }
+  },
+  {
+    "name": "blog-platform-frontend",
+    "desc": "Frontend app for blog interaction running on webpack dev server. Created a responsive, reusable frontend layer suitable for iterative product enhancement. Tools: React, JavaScript, Webpack",
+    "image": "blog-platform-frontend",
+    "category": "frontend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/blog-platform-frontend",
+      "code": "https://github.com/utsavanand0209/blog-platform-frontend"
+    }
+  },
+  {
+    "name": "fitness-tracker-backend",
+    "desc": "Fitness logs API using Node.js, Express, and MongoDB. Enabled reliable fitness data pipelines with clean API boundaries for frontend clients. Tools: Node.js, Express, MongoDB, Mongoose",
+    "image": "fitness-tracker-backend",
+    "category": "backend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/fitness-tracker-backend",
+      "code": "https://github.com/utsavanand0209/fitness-tracker-backend"
+    }
+  },
+  {
+    "name": "fitness-tracker-frontend",
+    "desc": "UI client for fitness logs with React and a local dev server workflow. Improved user visibility into fitness progress through clear, task-oriented interface flows. Tools: React, JavaScript, Webpack",
+    "image": "fitness-tracker-frontend",
+    "category": "frontend",
+    "links": {
+      "view": "https://github.com/utsavanand0209/fitness-tracker-frontend",
+      "code": "https://github.com/utsavanand0209/fitness-tracker-frontend"
+    }
+  }
+]
