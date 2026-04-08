@@ -1,5 +1,25 @@
 [
   {
+    "name": "Java",
+    "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "https://img.icons8.com/color/48/000000/typescript.png"
+  },
+  {
+    "name": "Python",
+    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
+  },
+  {
+    "name": "Node.js",
+    "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
+  },
+  {
     "name": "Express",
     "icon": "https://img.icons8.com/fluency/48/express-js.png"
   },
@@ -8,76 +28,56 @@
     "icon": "https://img.icons8.com/color/48/000000/react-native.png"
   },
   {
-    "name": "Java",
-    "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"
-  },
-  {
-    "name": "Node.js",
-    "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
-  },
-  {
-    "name": "Python",
-    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
-  },
-  {
-    "name": "Android",
-    "icon": "https://img.icons8.com/color/48/000000/android-os.png"
-  },
-  {
-    "name": "Gradle",
-    "icon": "https://img.icons8.com/color/48/gradle.png"
+    "name": "Angular",
+    "icon": "https://img.icons8.com/color/48/000000/angularjs.png"
   },
   {
     "name": "Flask",
     "icon": "https://img.icons8.com/fluency/48/flask.png"
   },
   {
-    "name": "MongoDB",
-    "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
-  },
-  {
-    "name": "Mongoose",
-    "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
-  },
-  {
-    "name": "JavaScript",
-    "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-  },
-  {
-    "name": "Webpack",
-    "icon": "https://img.icons8.com/color/48/webpack.png"
-  },
-  {
-    "name": "Google Maps API",
-    "icon": "https://img.icons8.com/color/48/000000/google-maps-new.png"
-  },
-  {
-    "name": "Volley",
-    "icon": "https://img.icons8.com/color/48/000000/networking-manager.png"
+    "name": "Android",
+    "icon": "https://img.icons8.com/color/48/000000/android-os.png"
   },
   {
     "name": "PostgreSQL",
     "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
   },
   {
-    "name": "REST API",
+    "name": "MongoDB",
+    "icon": "https://img.icons8.com/color/48/000000/mongodb.png"
+  },
+  {
+    "name": "SQLite",
+    "icon": "https://img.icons8.com/color/48/000000/sqlite.png"
+  },
+  {
+    "name": "REST APIs",
     "icon": "https://img.icons8.com/color/48/000000/api-settings.png"
   },
   {
-    "name": "Rasa",
-    "icon": "https://img.icons8.com/color/48/000000/chatbot.png"
+    "name": "Microservices",
+    "icon": "https://img.icons8.com/color/48/000000/server-network.png"
   },
   {
-    "name": "TensorFlow",
-    "icon": "https://img.icons8.com/color/48/000000/tensorflow.png"
+    "name": "Docker",
+    "icon": "https://img.icons8.com/color/48/000000/docker.png"
   },
   {
-    "name": "NLU",
-    "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png"
+    "name": "Git",
+    "icon": "https://img.icons8.com/color/48/000000/git.png"
   },
   {
-    "name": "Custom Actions",
-    "icon": "https://img.icons8.com/color/48/000000/workflow.png"
+    "name": "Linux",
+    "icon": "https://img.icons8.com/color/48/000000/linux--v1.png"
+  },
+  {
+    "name": "JWT Auth",
+    "icon": "https://img.icons8.com/color/48/000000/certificate.png"
+  },
+  {
+    "name": "Webhooks",
+    "icon": "https://img.icons8.com/color/48/000000/api-settings.png"
   },
   {
     "name": "Firebase Auth",
@@ -88,11 +88,27 @@
     "icon": "https://img.icons8.com/color/48/000000/firebase.png"
   },
   {
+    "name": "Rasa",
+    "icon": "https://img.icons8.com/color/48/000000/chatbot.png"
+  },
+  {
+    "name": "TensorFlow",
+    "icon": "https://img.icons8.com/color/48/000000/tensorflow.png"
+  },
+  {
+    "name": "AWS",
+    "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png"
+  },
+  {
     "name": "Azure",
     "icon": "https://img.icons8.com/color/48/000000/azure-1.png"
   },
   {
-    "name": "Cloud Docs",
-    "icon": "https://img.icons8.com/color/48/000000/document--v1.png"
+    "name": "Pytest",
+    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+  },
+  {
+    "name": "CI/CD",
+    "icon": "https://img.icons8.com/color/48/000000/pipeline.png"
   }
 ]

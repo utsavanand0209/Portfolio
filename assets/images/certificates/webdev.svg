@@ -1,0 +1,33 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgWebdev" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentWebdev" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00cc66;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgWebdev)"/>
+  <rect width="400" height="60" fill="url(#accentWebdev)"/>
+  
+  <!-- Code/Bracket Icon -->
+  <g transform="translate(200, 90)">
+    <!-- Left bracket -->
+    <path d="M -30 -20 L -15 -20 L -40 0 L -15 20 L -30 20" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <!-- Right bracket -->
+    <path d="M 30 -20 L 15 -20 L 40 0 L 15 20 L 30 20" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <!-- Center slash -->
+    <line x1="-5" y1="-25" x2="5" y2="25" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="200" y="200" text-anchor="middle" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#fff">Web Development</text>
+  <text x="200" y="230" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)">Certification</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#fff" font-weight="600">CodSoft - 2024</text>
+  
+  <circle cx="50" cy="50" r="3" fill="#fff" opacity="0.6"/>
+  <circle cx="350" cy="250" r="3" fill="#fff" opacity="0.6"/>
+</svg>

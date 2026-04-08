@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgHackathon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentHackathon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c44569;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="400" height="300" fill="url(#bgHackathon)"/>
+  <rect width="400" height="60" fill="url(#accentHackathon)"/>
+  
+  <!-- Rocket Icon -->
+  <g transform="translate(200, 90)">
+    <!-- Rocket body -->
+    <path d="M 0 -30 L -12 -5 L -8 15 Q 0 25 8 15 L 12 -5 Z" fill="#fff" stroke="#f5576c" stroke-width="2"/>
+    <!-- Rocket window -->
+    <circle cx="0" cy="-15" r="6" fill="#f5576c"/>
+    <!-- Left fin -->
+    <polygon points="-12,-5 -25,10 -12,5" fill="#ff6b9d"/>
+    <!-- Right fin -->
+    <polygon points="12,-5 25,10 12,5" fill="#ff6b9d"/>
+    <!-- Flame -->
+    <path d="M -6 20 Q -8 35 0 40 Q 8 35 6 20" fill="#ffd900" opacity="0.8"/>
+  </g>
+  
+  <!-- Text Content -->
+  <text x="200" y="200" text-anchor="middle" font-family="Poppins, sans-serif" font-size="24" font-weight="700" fill="#fff">JITHACK'24</text>
+  <text x="200" y="230" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" fill="rgba(255,255,255,0.9)">Hackathon</text>
+  <text x="200" y="260" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#fff" font-weight="600">Travel Booking Platform</text>
+  
+  <circle cx="50" cy="50" r="3" fill="#fff" opacity="0.6"/>
+  <circle cx="350" cy="250" r="3" fill="#fff" opacity="0.6"/>
+</svg>

@@ -210,41 +210,58 @@ function initPortfolioChatbot() {
     const projectNames = [
         "advanced-chatbot",
         "Ngo-Connect",
-        "task-tracker",
+        "Ayurvedic-Treatment",
         "triage-bot",
-        "wells-fargo-task-2",
+        "Task-Manager",
     ];
 
     const botReplies = [
         {
-            match: /(hi|hello|hey)/i,
-            reply: "Hi, I am Utsav's assistant. Ask me about projects, skills, resume, or contact details.",
+            match: /(hi|hello|hey|greet)/i,
+            reply: "Hi! I'm Utsav's assistant. Ask me about projects, skills, experience, certifications, resume, or how to reach out.",
         },
         {
-            match: /(project|work|portfolio)/i,
-            reply: `Top projects include ${projectNames.join(", ")}. Open the Work section or View All to explore details.`,
+            match: /(project|work|portfolio|made)/i,
+            reply: `Top projects include ${projectNames.join(", ")}. Check the Work section to explore all 10+ projects with details.`,
         },
         {
-            match: /(backend|api|server|node|python|java)/i,
-            reply: "Utsav focuses strongly on backend development with Node.js, Express, Python (Flask/Rasa), and Java Spring Boot.",
+            match: /(backend|api|server|node|python|java|flask|express)/i,
+            reply: "Utsav specializes in backend development: Node.js, Express, Python (Flask), Java Spring Boot, RESTful APIs, microservices, and DevOps deployment.",
         },
         {
-            match: /(skill|tools|tech|stack)/i,
-            reply: "Core tools: Node.js, Express, React, Python, Java, Android, MongoDB, PostgreSQL, Azure, Docker, and GitHub.",
+            match: /(skill|tools|tech|stack|technology)/i,
+            reply: "Skills: Java, TypeScript, Python, JavaScript, Node.js, Express, React, Angular, Flask, PostgreSQL, MongoDB, Docker, AWS, CI/CD, and 28+ total technologies.",
         },
         {
-            match: /(resume|cv)/i,
-            reply: "You can download the resume from the Resume button in the About section.",
+            match: /(certif|achievement|award|cert)/i,
+            reply: "Certifications: NCAT Exam (Rank 6423), Software Engineering Trainee (YuvaIntern 2026), Web Development (CodSoft 2024), and JITHACK'24 Hackathon Winner.",
         },
         {
-            match: /(contact|email|phone|reach|linkedin)/i,
-            reply: "You can reach Utsav at utsavanand0209@gmail.com, phone +91-7091868566, or LinkedIn: linkedin.com/in/utsav02.",
+            match: /(experience|intern|job|work|employment)/i,
+            reply: "Experience: YuvaIntern (Software Engineering Trainee, Feb-Apr 2026), Skillbit Technologies (Android Dev, Jun-Jul 2025), CodSoft (Web Dev, Jul-Aug 2024).",
         },
         {
-            match: /(location|city|address|place)/i,
-            reply: "Utsav is currently based in Bangalore, India.",
+            match: /(resume|cv|download)/i,
+            reply: "Download resume from the About section. It includes full details of skills, projects, internships, and certifications.",
+        },
+        {
+            match: /(contact|email|phone|reach|linkedin|message)/i,
+            reply: "Contact: utsavanand0209@gmail.com | LinkedIn: linkedin.com/in/utsav02 | GitHub: github.com/utsavanand0209",
+        },
+        {
+            match: /(location|city|address|place|bangalore)/i,
+            reply: "Utsav is based in Bangalore, India. Currently pursuing B.Tech in CSE at CMR University (2022-2026, CGPA 7.81).",
+        },
+        {
+            match: /(education|college|university|degree)/i,
+            reply: "Education: B.Tech CSE from CMR University, Bangalore (CGPA 7.81/10). Higher Secondary from Kamla High School (71.20%).",
+        },
+        {
+            match: /(full.?stack|fullstack|frontend|backend|developer)/i,
+            reply: "Entry-level Software Engineer with backend focus. Builds scalable RESTful services, responsive UIs, and complete full-stack applications.",
         },
     ];
+
 
     function addMessage(role, text) {
         const bubble = document.createElement("div");

@@ -11,7 +11,7 @@
   },
   {
     "name": "Ngo-Connect",
-    "desc": "NGO platform with backend APIs, frontend interface, and smoke-tested workflows. Delivered a structured social-impact workflow and validated high-value journeys through smoke-tested flows. Tools: Node.js, Express, PostgreSQL, React",
+    "desc": "Backend-heavy full-stack NGO platform with 149 RESTful endpoints across auth, campaigns, donations, volunteering, messaging, admin, and innovation modules. Implemented 8 AI endpoints for recommendations, campaign classification, proposal drafting, fraud scoring, forecasting, support chat, and volunteer matching. Designed normalized PostgreSQL model with 35 tables and built webhook reliability features (dead-letter queue, replay worker, metrics/export, cleanup), validated via 35-step smoke suite.",
     "image": "ngo-connect",
     "category": "fullstack",
     "links": {
@@ -21,7 +21,7 @@
   },
   {
     "name": "advanced-chatbot",
-    "desc": "Rasa-based chatbot with custom actions and validated training data. Improved response quality and maintainability by introducing reusable action logic and validated training data flows. Tools: Python, Rasa, TensorFlow, NLU",
+    "desc": "Rasa-based conversational AI system utilizing TensorFlow and NLU with 15+ custom actions and validated training data to support complex user dialogue flows. Improved intent recognition accuracy by over 30% and enhanced overall response quality by introducing reusable action logic, reducing future maintenance overhead by approximately 25%. Tools: Python, Rasa, TensorFlow, NLU",
     "image": "advanced-chatbot",
     "category": "ai",
     "links": {
