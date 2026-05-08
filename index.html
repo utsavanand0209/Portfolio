@@ -1,503 +1,1573 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="utsav anand, portfolio, software developer, backend developer, full stack, projects" />
-    <meta name="description" content="Welcome to Utsav Anand's portfolio. Backend-focused software developer building full-stack, AI and systems projects." />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/girl.png" type="image/x-png">
-    <title>Portfolio | Utsav Anand</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utsav Anand — Backend Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050810;
+    --bg2: #080d1a;
+    --bg3: #0c1225;
+    --cyan: #00e5ff;
+    --cyan-dim: #00b8cc;
+    --cyan-glow: rgba(0,229,255,0.12);
+    --cyan-border: rgba(0,229,255,0.25);
+    --text: #e2eaf8;
+    --text-muted: #8899bb;
+    --text-dim: #445577;
+    --border: rgba(255,255,255,0.06);
+    --card: rgba(12,18,37,0.8);
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-head: 'Syne', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Matrix Canvas background */
+  #matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(5,8,16,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--text-muted); }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--cyan); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '//';
+    opacity: 0.5;
+  }
+
+  h2.section-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--cyan);
+    margin: 1rem 0 3rem;
+    opacity: 0.6;
+  }
+
+  /* Glitch Effect */
+  .glitch {
+    position: relative;
+    display: inline-block;
+  }
+  .glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+  }
+  @keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(62px, 9999px, 42px, 0); }
+    40% { clip: rect(16px, 9999px, 78px, 0); }
+    60% { clip: rect(89px, 9999px, 13px, 0); }
+    80% { clip: rect(45px, 9999px, 56px, 0); }
+    100% { clip: rect(98px, 9999px, 21px, 0); }
+  }
+  @keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(12px, 9999px, 59px, 0); }
+    40% { clip: rect(88px, 9999px, 24px, 0); }
+    60% { clip: rect(34px, 9999px, 76px, 0); }
+    80% { clip: rect(90px, 9999px, 11px, 0); }
+    100% { clip: rect(43px, 9999px, 87px, 0); }
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hero-inner {
+    width: 100%;
+  }
+
+  .hero-prompt {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .hero-prompt span { color: var(--text-muted); }
+
+  .hero-name {
+    font-family: var(--font-head);
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name .cyan { color: var(--cyan); }
+
+  .hero-role {
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-role .cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.1em;
+    background: var(--cyan);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .hero-bio {
+    max-width: 580px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--cyan);
+    color: #000;
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan-border);
+  }
+
+  .btn-outline:hover {
+    background: var(--cyan-glow);
+    border-color: var(--cyan);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-num {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--cyan);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .avatar-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .avatar-terminal {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 340px;
+    overflow: hidden;
+  }
+
+  .terminal-bar {
+    background: var(--bg2);
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+
+  .terminal-title {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+  }
+
+  .avatar-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--cyan-glow);
+    border: 2px solid var(--cyan-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--cyan);
+    margin-bottom: 1.2rem;
+  }
+
+  .t-line {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--text-muted);
+  }
+
+  .t-line .key { color: var(--cyan); margin-right: 0.5rem; }
+  .t-line .val { color: var(--text); }
+  .t-line .str { color: #a8ff78; }
+
+  .about-text p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.4rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .skill-card:hover {
+    border-color: var(--cyan-border);
+    transform: translateY(-3px);
+  }
+
+  .skill-card-title {
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-card-title::before {
+    content: '>';
+    opacity: 0.5;
+  }
+
+  .tag-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tag {
+    background: rgba(0,229,255,0.05);
+    border: 1px solid rgba(0,229,255,0.15);
+    color: var(--text-muted);
+    padding: 0.3rem 0.7rem;
+    border-radius: 3px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    transition: all 0.15s;
+  }
+
+  .tag:hover {
+    background: var(--cyan-glow);
+    color: var(--cyan);
+    border-color: var(--cyan-border);
+  }
+
+  /* ─── EXPERIENCE ─── */
+  .timeline { position: relative; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--cyan-border), transparent);
+  }
+
+  .tl-item {
+    padding-left: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
+  }
+
+  .tl-date {
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  .tl-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .tl-org {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .tl-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .tl-bullets li {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    display: flex;
+    gap: 0.7rem;
+  }
+
+  .tl-bullets li::before {
+    content: '▸';
+    color: var(--cyan);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .proj-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .proj-card:hover {
+    border-color: var(--cyan-border);
+    transform: translateY(-4px);
+  }
+
+  .proj-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .proj-icon {
+    font-size: 20px;
+    color: var(--cyan);
+    opacity: 0.6;
+  }
+
+  .proj-name {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .proj-year {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+  }
+
+  .proj-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .proj-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .stack-tag {
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.12);
+    color: var(--cyan-dim);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .proj-link {
+    font-size: 11px;
+    color: var(--cyan);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+
+  .proj-link:hover { opacity: 1; }
+
+  /* ─── EDUCATION ─── */
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 8px 8px 0;
+    padding: 1.6rem 2rem;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
+  }
+
+  .edu-card:hover { border-color: var(--cyan); }
+
+  .edu-inst {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-degree {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .edu-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .edu-badge {
+    font-size: 11px;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    border: 1px solid var(--cyan-border);
+    color: var(--cyan);
+    background: var(--cyan-glow);
+  }
+
+  .coursework {
+    margin-top: 0.8rem;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .cert-card:hover { border-color: var(--cyan-border); }
+
+  .cert-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--cyan-glow);
+    border: 1px solid var(--cyan-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cyan);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .cert-name {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+  }
+
+  .cert-org {
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  /* ─── WHY ME ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .why-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+
+  .why-card:hover {
+    border-color: var(--cyan-border);
+    transform: translateY(-3px);
+  }
+
+  .why-num {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--cyan);
+    opacity: 0.1;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    line-height: 1;
+  }
+
+  .why-icon-row {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--cyan);
+  }
+
+  .why-title {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .why-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--cyan-border);
+    transform: translateX(4px);
+  }
+
+  .contact-link-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: var(--cyan-glow);
+    border: 1px solid var(--cyan-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cyan);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .contact-link-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-link-val {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  /* Terminal CTA */
+  .terminal-cta {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .terminal-cta-bar {
+    background: var(--bg2);
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .terminal-cta-body { padding: 1.6rem; }
+
+  .cmd-line {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--text-muted);
+  }
+
+  .cmd-line .ps { color: var(--cyan); margin-right: 0.5rem; }
+  .cmd-line .cmd { color: #a8ff78; }
+  .cmd-line .arg { color: #ffd700; }
+  .cmd-line .out { color: var(--text-muted); margin-left: 0; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  footer span { color: var(--cyan); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
+<canvas id="matrix-canvas"></canvas>
 
-<!-- navbar starts -->
-<header>
-        <a href="./" class="logo"><i class="fab fa-node-js"></i> Utsav</a>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">UA<span>.dev</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#why-me">Why Me</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
-
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
-
-    <div class="content">
-    <h2>Hi There,<br/> I'm Utsav <span>Anand</span></h2>
-    <p> I am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/utsav02/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="github" aria-label="GitHub" href="https://github.com/utsavanand0209" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="telegram" aria-label="Portfolio" href="https://utsavanand0209.github.io/Portfolio/" target="_blank"><i class="fas fa-globe"></i></a></li>
-          <li><a class="instagram" aria-label="Email" href="mailto:utsavanand0209@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
-        </ul>
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-inner">
+    <p class="hero-prompt"><span>$</span> whoami</p>
+    <h1 class="hero-name">Utsav<br><span class="cyan glitch" data-text="Anand.">Anand.</span></h1>
+    <p class="hero-role">
+      Backend Software Engineer<span class="cursor"></span>
+    </p>
+    <p class="hero-bio">
+      Building robust REST APIs, microservices, and cloud-native systems. 
+      Proficient in Java, Spring Boot, Node.js &amp; PostgreSQL — with a solid 
+      grounding in system design, DSA, and CI/CD pipelines. 
+      Fresh grad from CMR University, ready to ship production-grade code.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-outline" href="#projects">View Projects</a>
+      <a class="btn btn-outline" href="https://github.com/utsavanand0209" target="_blank">GitHub ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Internships</div>
+      </div>
+      <div>
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div>
+        <div class="stat-num">7.96</div>
+        <div class="stat-label">CGPA</div>
+      </div>
+      <div>
+        <div class="stat-num">149</div>
+        <div class="stat-label">API Endpoints Built</div>
       </div>
     </div>
-<div class="image">
-    <img draggable="false" class="tilt avatar-image avatar-main" src="./assets/images/avatar-main.png" alt="Animated Utsav avatar">
-</div>
-</section>
-<!-- hero section ends -->
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt avatar-image avatar-alt" src="./assets/images/avatar-alt.png" alt="Animated coding avatar">
-    </div>
-    <div class="content">
-        <h3>I'm Utsav Anand</h3>
-        <span class="tag">Backend-focused Software Engineer</span>
-        
-        <p>Entry-level Software Engineer with hands-on experience building scalable RESTful services, microservices-aligned backend modules, SQL-backed data models, and dynamic user interfaces using Java, Node.js, TypeScript, and Angular. Strong foundation in DSA, OOP, debugging, and API reliability. I enjoy building real software that solves day-to-day problems, especially products that combine backend logic, clean user experience, and practical deployment.</p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> utsavanand0209@gmail.com</p>
-              <p><span> place : </span> Bangalore, India</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="./assets/utsav_anand_resume_backend_sde.pdf" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
-
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row" id="skillsContainer">
-
-            <!-- <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
-                <span>AdobeXD</span>
-              </div>
-            </div> -->
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="./assets/images/educat/campus-icon1.png" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor Of Technology In Computer Science Engineering</h3>
-        <p>CMR University, Bengaluru</p>
-        <h4>2022-2026 | CGPA: 7.81/10</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="./assets/images/educat/siddaganga.jpg" alt="">
-      </div>
-      <div class="content">
-      <h3>Higher Secondary Education</h3>
-      <p>Kamla High School</p>
-      <h4>2020 | Percentage: 71.20%</h4>
-      </div>
-    </div>
-
-</div>
-</section>
-<!-- education section ends -->
-
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <!-- <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
-        </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/jigar-sable/Portfolio-Website" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-</div>
-
-<div class="viewall">
-  <a href="./projects/" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div>
-
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-  <div class="quote">
-      <span>Every experience is a stepping stone to professional excellence.</span>
   </div>
+</div>
 
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label reveal">about.me</div>
+  <h2 class="section-title reveal">Who Am I</h2>
+  <div class="divider reveal"></div>
+  <div class="about-grid">
+    <div class="avatar-box reveal">
+      <div class="avatar-terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-title">utsav@dev ~</span>
+        </div>
+        <div class="terminal-body">
+          <div class="avatar-circle">UA</div>
+          <div class="t-line"><span class="key">name:</span><span class="str">"Utsav Anand"</span></div>
+          <div class="t-line"><span class="key">role:</span><span class="str">"Backend Engineer"</span></div>
+          <div class="t-line"><span class="key">location:</span><span class="str">"Bengaluru, India"</span></div>
+          <div class="t-line"><span class="key">degree:</span><span class="str">"B.Tech CSE"</span></div>
+          <div class="t-line"><span class="key">cgpa:</span><span class="val">7.96</span></div>
+          <div class="t-line"><span class="key">status:</span><span style="color:#a8ff78">"open_to_work" ✓</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <p>
+        I'm a Computer Science graduate from CMR University, Bengaluru, with a deep focus on backend systems. 
+        I enjoy designing architectures that scale — whether that's a 149-endpoint RESTful system for NGO 
+        workflows, or a microservice pipeline with 99.9% uptime.
+      </p>
+      <p>
+        During my undergraduate journey I built real products through internships at YuvaIntern, 
+        Skillbit Technologies, and CodSoft — shipping features that had measurable impact: 40% 
+        reduction in billing overhead, 25% drop in API latency, 15% throughput improvements.
+      </p>
+      <p>
+        When I'm not writing backend code, I'm exploring AI integrations — I've worked with the 
+        Gemini API, Rasa, and TensorFlow to add intelligence to applications. I believe great 
+        software is fast, secure, and maintainable — and I obsess over all three.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label reveal">tech.stack</div>
+  <h2 class="section-title reveal">Skills &amp; Technologies</h2>
+  <div class="divider reveal"></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Languages</div>
+      <div class="tag-wrap">
+        <span class="tag">Java</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">C</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">SQL</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Frameworks</div>
+      <div class="tag-wrap">
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express.js</span>
+        <span class="tag">Flask</span>
+        <span class="tag">React</span>
+        <span class="tag">Angular</span>
+        <span class="tag">Rasa</span>
+        <span class="tag">TensorFlow</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Databases</div>
+      <div class="tag-wrap">
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">SQLite</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Cloud &amp; DevOps</div>
+      <div class="tag-wrap">
+        <span class="tag">AWS</span>
+        <span class="tag">Docker</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">CI/CD Pipelines</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Git</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">Tools &amp; Auth</div>
+      <div class="tag-wrap">
+        <span class="tag">JWT</span>
+        <span class="tag">bcrypt</span>
+        <span class="tag">Postman</span>
+        <span class="tag">Webhooks</span>
+        <span class="tag">pytest</span>
+        <span class="tag">JUnit</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-title">CS Fundamentals</div>
+      <div class="tag-wrap">
+        <span class="tag">DSA</span>
+        <span class="tag">OOP</span>
+        <span class="tag">System Design</span>
+        <span class="tag">DBMS</span>
+        <span class="tag">OS</span>
+        <span class="tag">Computer Networks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label reveal">work.history</div>
+  <h2 class="section-title reveal">Experience</h2>
+  <div class="divider reveal"></div>
   <div class="timeline">
 
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>YuvaIntern</h2>
-        </div>
-        <div class="desc">
-            <h3>Software Engineering Trainee</h3>
-            <p>Feb 2026 - Apr 2026</p>
-            <ul>
-              <li><strong>Advanced Subscription Manager:</strong> Full-stack Flask application for recurring subscriptions</li>
-              <li><strong>Security:</strong> Bcrypt authentication and per-user data isolation</li>
-              <li><strong>Testing:</strong> Pytest automated tests with performance benchmarks</li>
-              <li><strong>DevOps:</strong> End-to-end deployment workflows and monitoring</li>
-            </ul>
-        </div>
-      </div>
+    <div class="tl-item reveal">
+      <div class="tl-date">Feb 2026 — Apr 2026</div>
+      <div class="tl-title">Software Engineering Trainee</div>
+      <div class="tl-org">YuvaIntern · Bengaluru, India</div>
+      <ul class="tl-bullets">
+        <li>Developed the Advanced Subscription Manager (full-stack Flask app) — reduced manual billing workflows by 40% through automated analytics API and custom dashboard.</li>
+        <li>Implemented secure JWT + bcrypt authentication with per-user data isolation, securing 100% of user accounts and adding smart billing-cycle filters.</li>
+        <li>Built automated testing suites with pytest and ran load-testing benchmarks — improved API throughput by 15% and optimized resource utilization.</li>
+        <li>Deployed end-to-end CI/CD pipelines with active monitoring and rollback strategies, achieving 99.9% application uptime.</li>
+        <li>Documented all API endpoints and system architecture, accelerating onboarding for future frontend teams.</li>
+      </ul>
     </div>
 
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Skillbit Technologies</h2>
-        </div>
-        <div class="desc">
-            <h3>Android Development Intern</h3>
-            <p>Jun 2025 - Jul 2025</p>
-            <ul>
-              <li>Backend API integration with Android modules</li>
-              <li>Resolved 15+ defects improving stability</li>
-              <li>Legacy Android codebase maintenance</li>
-            </ul>
-        </div>
-      </div>
+    <div class="tl-item reveal">
+      <div class="tl-date">Jun 2025 — Jul 2025</div>
+      <div class="tl-title">Android Development Intern</div>
+      <div class="tl-org">Skillbit Technologies</div>
+      <ul class="tl-bullets">
+        <li>Integrated backend RESTful APIs with Android UI modules for dynamic JSON data, cutting data retrieval latency by 25% and improving user experience.</li>
+        <li>Collaborated in Agile sprints with senior engineers to identify and resolve 15 critical production defects, improving application stability and release confidence.</li>
+      </ul>
     </div>
 
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>CodSoft</h2>
-        </div>
-        <div class="desc">
-            <h3>Web Developer Intern</h3>
-            <p>Jul 2024 - Aug 2024</p>
-            <ul>
-              <li>Built 3 responsive web applications</li>
-              <li>Third-party API integration</li>
-              <li>20% frontend performance improvement</li>
-            </ul>
-        </div>
-      </div>
+    <div class="tl-item reveal">
+      <div class="tl-date">Jul 2024 — Aug 2024</div>
+      <div class="tl-title">Web Developer Intern</div>
+      <div class="tl-org">CodSoft</div>
+      <ul class="tl-bullets">
+        <li>Built and released 3 fully responsive web applications using frontend frameworks and REST API integrations, scaling architecture for varied screen resolutions.</li>
+        <li>Optimized frontend rendering and asset delivery, reducing page load times by 20% and improving overall performance scores.</li>
+      </ul>
     </div>
 
-  </div>
-
-  <div class="morebtn">
-    <a href="./experience/" class="btn"><span>View Full Timeline</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-
-</section>
-<!-- experience section ends -->
-
-<!-- certifications section starts -->
-<section class="certifications" id="certifications">
-
-  <h1 class="heading"><i class="fas fa-certificate"></i> Certifications & <span>Achievements</span></h1>
-
-  <div class="cert-container">
-
-    <div class="cert-card tilt">
-      <img draggable="false" src="./assets/images/certificates/ncat.svg" alt="NCAT Exam Certificate" />
-      <div class="cert-content">
-        <div class="cert-tag">
-          <h3>NCAT Exam</h3>
-        </div>
-        <div class="cert-desc">
-          <p>Competitive exam by Naukri ranking your technical skills</p>
-          <h4>All India Rank: <span>6423</span></h4>
-          <p class="cert-org">Naukri - 2025</p>
-          <div class="cert-btns">
-            <a href="https://www.naukri.com/" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> View</a>
-            <a href="#certifications" class="btn"><i class="fas fa-certificate"></i> Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cert-card tilt">
-      <img draggable="false" src="./assets/images/certificates/internship.svg" alt="Software Engineering Trainee" />
-      <div class="cert-content">
-        <div class="cert-tag">
-          <h3>Software Engineering Trainee</h3>
-        </div>
-        <div class="cert-desc">
-          <p>Professional training in full-stack software development</p>
-          <h4>YuvaIntern <span>2026</span></h4>
-          <p class="cert-org">Advanced Subscription Manager | Flask, Pytest, DevOps</p>
-          <div class="cert-btns">
-            <a href="https://www.yuvaintern.in/" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Verify</a>
-            <a href="#certifications" class="btn"><i class="fas fa-certificate"></i> Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cert-card tilt">
-      <img draggable="false" src="./assets/images/certificates/webdev.svg" alt="Web Development Certification" />
-      <div class="cert-content">
-        <div class="cert-tag">
-          <h3>Web Development</h3>
-        </div>
-        <div class="cert-desc">
-          <p>Comprehensive training in modern web development practices</p>
-          <h4>CodSoft <span>2024</span></h4>
-          <p class="cert-org">Frontend & Backend Development</p>
-          <div class="cert-btns">
-            <a href="https://www.codsoft.in/" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Verify</a>
-            <a href="#certifications" class="btn"><i class="fas fa-certificate"></i> Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cert-card tilt">
-      <img draggable="false" src="./assets/images/certificates/hackathon.svg" alt="JITHACK'24 Hackathon" />
-      <div class="cert-content">
-        <div class="cert-tag">
-          <h3>JITHACK'24 Hackathon</h3>
-        </div>
-        <div class="cert-desc">
-          <p>24-hour competitive coding and innovation hackathon event</p>
-          <h4>Travel Booking <span>Platform</span></h4>
-          <p class="cert-org">Full-stack web application development</p>
-          <div class="cert-btns">
-            <a href="#" class="btn"><i class="fas fa-external-link-alt"></i> GitHub</a>
-            <a href="#certifications" class="btn"><i class="fas fa-certificate"></i> Details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-<!-- certifications section ends -->
-
-<!-- contact section starts -->
-<section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
   </div>
 </section>
-<!-- contact section ends -->
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label reveal">build.log</div>
+  <h2 class="section-title reveal">Projects</h2>
+  <div class="divider reveal"></div>
+  <div class="projects-grid">
 
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Utsav Anand's Portfolio</h3>
-          <p>Thank you for visiting my portfolio. I build practical software across backend systems, conversational AI, and full-stack applications. <br/> <br/> Let's connect and collaborate.</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-          <a href="#certifications"><i class="fas fa-chevron-circle-right"></i> certifications</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91-7091868566</p>
-          <p> <i class="fas fa-envelope"></i>utsavanand0209@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Bangalore, India</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/utsav02/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/utsavanand0209" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:utsavanand0209@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://utsavanand0209.github.io/Portfolio/" class="fas fa-globe" aria-label="Portfolio" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/utsav02/"> Utsav Anand</a></h1>
-
-</section>
-<!-- footer section ends -->
-
-<!-- chatbot widget starts -->
-<div class="chatbot-widget" id="portfolio-chatbot">
-  <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chatbot">
-    <img src="./assets/images/chat-avatar.png" alt="Chatbot avatar">
-    <span>Chat with Utsav AI</span>
-  </button>
-
-  <div class="chatbot-panel" id="chatbot-panel" aria-hidden="true">
-    <div class="chatbot-header">
-      <div class="chatbot-title-wrap">
-        <img src="./assets/images/chat-avatar.png" alt="Chatbot profile">
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
         <div>
-          <h3>Utsav Assistant</h3>
-          <p>Ask about projects, skills, and contact</p>
+          <div class="proj-name">NGO-Connect AI</div>
+          <div class="proj-year">2025 — 2026</div>
         </div>
+        <div class="proj-icon">⬡</div>
       </div>
-      <button id="chatbot-close" class="chatbot-close" aria-label="Close chatbot">
-        <i class="fas fa-times"></i>
-      </button>
+      <p class="proj-desc">
+        Scalable backend with 149 RESTful endpoints for auth, campaigns, donations, and admin. 
+        Integrated 8 AI models for fraud scoring, classification &amp; recommendations — driving 35% 
+        boost in user engagement. PostgreSQL schema with 35 tables; avg response time 21.69ms, p90 latency 72ms.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">JWT</span>
+        <span class="stack-tag">Gemini API</span>
+        <span class="stack-tag">RBAC</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209/ngo-connect-ai" target="_blank">→ github.com/utsavanand0209/ngo-connect-ai</a>
     </div>
 
-    <div id="chatbot-messages" class="chatbot-messages"></div>
-
-    <div class="chatbot-quick-actions" id="chatbot-quick-actions">
-      <button type="button" data-prompt="Show backend projects">Backend Projects</button>
-      <button type="button" data-prompt="What tools do you use?">Top Tools</button>
-      <button type="button" data-prompt="How can I contact you?">Contact Info</button>
-      <button type="button" data-prompt="Where is your resume?">Resume</button>
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Lila TicTacToe</div>
+          <div class="proj-year">2026</div>
+        </div>
+        <div class="proj-icon">◈</div>
+      </div>
+      <p class="proj-desc">
+        Server-authoritative multiplayer game built on the Nakama backend — guarantees 
+        cheat-resistant real-time state sync via PostgreSQL. React frontend connected to 
+        backend WebSocket streams for low-latency, real-time gameplay.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Nakama</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">WebSockets</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209" target="_blank">→ github.com/utsavanand0209</a>
     </div>
 
-    <form id="chatbot-form" class="chatbot-form">
-      <input id="chatbot-input" type="text" placeholder="Type your message..." autocomplete="off" required>
-      <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
-    </form>
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Advanced Chatbot AI</div>
+          <div class="proj-year">2026</div>
+        </div>
+        <div class="proj-icon">◎</div>
+      </div>
+      <p class="proj-desc">
+        Conversational AI agent using Rasa + TensorFlow with 15+ custom backend actions for 
+        complex dialog flows. Improved NLU intent recognition accuracy by 30% and reduced 
+        codebase maintenance overhead by 25% through modular action logic.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Rasa</span>
+        <span class="stack-tag">TensorFlow</span>
+        <span class="stack-tag">NLU</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209" target="_blank">→ github.com/utsavanand0209</a>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Backend Financial Workflow</div>
+          <div class="proj-year">2025</div>
+        </div>
+        <div class="proj-icon">▣</div>
+      </div>
+      <p class="proj-desc">
+        Secure Java microservices &amp; REST APIs for transactional financial workflows with 
+        full ACID compliance and data integrity guarantees. Led unit testing and CI/CD 
+        debugging initiatives — raised code coverage to 85%.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">Java</span>
+        <span class="stack-tag">SQL</span>
+        <span class="stack-tag">REST APIs</span>
+        <span class="stack-tag">CI/CD</span>
+        <span class="stack-tag">JUnit</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209" target="_blank">→ github.com/utsavanand0209</a>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Triage Bot</div>
+          <div class="proj-year">2026</div>
+        </div>
+        <div class="proj-icon">🏥</div>
+      </div>
+      <p class="proj-desc">
+        A rule-based healthcare triage chatbot built with Flask. Directly integrated with a lightweight HTML frontend to provide preliminary medical symptom assessment and guidance.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">HTML</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209/triage-bot" target="_blank">→ github.com/utsavanand0209/triage-bot</a>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Task Tracker</div>
+          <div class="proj-year">2026</div>
+        </div>
+        <div class="proj-icon">✓</div>
+      </div>
+      <p class="proj-desc">
+        A comprehensive task management application. Built with TypeScript to ensure type safety and robust architecture for tracking daily tasks and productivity metrics.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">Node.js</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209/task-tracker" target="_blank">→ github.com/utsavanand0209/task-tracker</a>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-card-top">
+        <div>
+          <div class="proj-name">Blog Platform Backend</div>
+          <div class="proj-year">2026</div>
+        </div>
+        <div class="proj-icon">📝</div>
+      </div>
+      <p class="proj-desc">
+        A robust RESTful API backend for a blogging platform. Handles user authentication, content management, and commenting systems with a scalable architecture.
+      </p>
+      <div class="proj-stack">
+        <span class="stack-tag">JavaScript</span>
+        <span class="stack-tag">Express</span>
+        <span class="stack-tag">REST API</span>
+      </div>
+      <a class="proj-link" href="https://github.com/utsavanand0209/blog-platform-backend" target="_blank">→ github.com/utsavanand0209/blog-platform-backend</a>
+    </div>
+
   </div>
-</div>
-<!-- chatbot widget ends -->
+</section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label reveal">education.log</div>
+  <h2 class="section-title reveal">Education</h2>
+  <div class="divider reveal"></div>
 
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
+  <div class="edu-card reveal">
+    <div class="edu-inst">CMR University</div>
+    <div class="edu-degree">B.Tech in Computer Science and Engineering</div>
+    <div class="edu-meta">
+      <span class="edu-badge">CGPA: 7.96 / 10</span>
+      <span class="edu-badge">2022 — 2026</span>
+      <span class="edu-badge">Bengaluru, India</span>
+    </div>
+    <div class="coursework">
+      Relevant Coursework: Data Structures &amp; Algorithms · Database Management Systems · 
+      Operating Systems · Object-Oriented Programming · Computer Networks
+    </div>
+  </div>
+</section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label reveal">achievements.json</div>
+  <h2 class="section-title reveal">Certifications &amp; Achievements</h2>
+  <div class="divider reveal"></div>
+  <div class="cert-grid">
 
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="cert-card reveal">
+      <div class="cert-icon">✦</div>
+      <div>
+        <div class="cert-name">Software Engineering Trainee — Certificate of Completion</div>
+        <div class="cert-org">YuvaIntern · 2026</div>
+      </div>
+    </div>
 
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="cert-card reveal">
+      <div class="cert-icon">◈</div>
+      <div>
+        <div class="cert-name">NCAT Exam — All India Rank 6423</div>
+        <div class="cert-org">National Competitive Assessment · 2025</div>
+      </div>
+    </div>
 
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
+    <div class="cert-card reveal">
+      <div class="cert-icon">⬡</div>
+      <div>
+        <div class="cert-name">Web Development Projects Certification</div>
+        <div class="cert-org">CodSoft</div>
+      </div>
+    </div>
 
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="cert-card reveal">
+      <div class="cert-icon">▲</div>
+      <div>
+        <div class="cert-name">Hackathon Participant — JITHACK'24</div>
+        <div class="cert-org">Travel Booking Website Architecture</div>
+      </div>
+    </div>
 
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
+  </div>
+</section>
 
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+<!-- WHY ME -->
+<section id="why-me">
+  <div class="section-label reveal">hire.reasons</div>
+  <h2 class="section-title reveal">Why Me?</h2>
+  <div class="divider reveal"></div>
+  <div class="why-grid">
 
-<script src="./assets/js/script.js"></script>
+    <div class="why-card reveal">
+      <div class="why-num">01</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">I ship code that matters.</div>
+      <p class="why-text">
+        Not toy projects — real systems with measurable outcomes. 
+        40% billing automation at YuvaIntern. 25% latency drop at Skillbit. 
+        149 endpoints in a live AI-powered platform. I measure my work in impact, not commits.
+      </p>
+    </div>
 
+    <div class="why-card reveal">
+      <div class="why-num">02</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">Backend depth, not just breadth.</div>
+      <p class="why-text">
+        I don't just build APIs — I think about auth flows, ACID compliance, 
+        dead-letter queues, p90 latencies, and test coverage. 
+        At 7.96 CGPA with hands-on production experience, 
+        I bring academic rigor and real-world instincts together.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">03</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">AI-aware from day one.</div>
+      <p class="why-text">
+        I've integrated Gemini, built Rasa NLU pipelines, and optimized TensorFlow 
+        models — not as experiments, but as features in working products. 
+        As AI reshapes backend engineering, I'm already fluent in the language.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">04</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">Built for teams, not just solo.</div>
+      <p class="why-text">
+        I've shipped in Agile sprints, squashed 15 production defects collaboratively, 
+        documented architecture for future engineers, and stayed through CI/CD 
+        failures until uptime hit 99.9%. I know what it means to own a codebase together.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">05</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">Fast, self-directed, and hungry.</div>
+      <p class="why-text">
+        Across 3 internships and 4+ projects, I consistently picked up new stacks 
+        on the job — from Android integration to multiplayer game backends. 
+        I don't wait to be taught; I get unblocked and ship.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-num">06</div>
+      <div class="why-icon-row">▸▸</div>
+      <div class="why-title">Strong fundamentals, forever.</div>
+      <p class="why-text">
+        DSA, system design, OS, networks, DBMS — the stuff that doesn't change. 
+        With a national NCAT rank of 6423 and consistent academic performance, 
+        I have the foundation to grow fast into any tech stack you throw at me.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label reveal">connect.init()</div>
+  <h2 class="section-title reveal">Get In Touch</h2>
+  <div class="divider reveal"></div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro">
+        I'm actively looking for backend engineering opportunities. 
+        Whether you're a startup building from scratch or a team 
+        scaling systems — I'd love to hear from you. 
+        Let's build something fast, secure, and reliable.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:utsavanand0209@gmail.com">
+          <div class="contact-link-icon">@</div>
+          <div>
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-val">utsavanand0209@gmail.com</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/utsav02" target="_blank">
+          <div class="contact-link-icon">in</div>
+          <div>
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-val">linkedin.com/in/utsav02</div>
+          </div>
+        </a>
+        <a class="contact-link" href="https://github.com/utsavanand0209" target="_blank">
+          <div class="contact-link-icon">gh</div>
+          <div>
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-val">github.com/utsavanand0209</div>
+          </div>
+        </a>
+        <a class="contact-link" href="tel:+917091868566">
+          <div class="contact-link-icon">#</div>
+          <div>
+            <div class="contact-link-label">Phone</div>
+            <div class="contact-link-val">+91 70918 68566</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="terminal-cta reveal">
+      <div class="terminal-cta-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="terminal-title">recruiter@company ~</span>
+      </div>
+      <div class="terminal-cta-body">
+        <div class="cmd-line"><span class="ps">$</span><span class="cmd">curl</span> <span class="arg">--request</span> hire</div>
+        <div class="cmd-line"><span class="out">→ Fetching candidate profile...</span></div>
+        <div class="cmd-line"><span class="out">→ CGPA: 7.96 ✓</span></div>
+        <div class="cmd-line"><span class="out">→ Internships: 3 ✓</span></div>
+        <div class="cmd-line"><span class="out">→ Projects shipped: 4+ ✓</span></div>
+        <div class="cmd-line"><span class="out">→ Open to work: true ✓</span></div>
+        <div class="cmd-line" style="margin-top:0.5rem"><span class="ps">$</span><span class="cmd">echo</span> <span class="arg">"Let's talk."</span></div>
+        <div class="cmd-line" style="color:#a8ff78">Let's talk.</div>
+        <div class="cmd-line" style="margin-top:1rem"><span class="ps">$</span><span style="color:var(--cyan)">_</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built by <span>Utsav Anand</span> · Bengaluru, India · 2026</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Typing effect
+  const roles = [
+    'Backend Software Engineer',
+    'REST API Developer',
+    'Microservices Architect',
+    'Java & Node.js Dev',
+    'Open to Work 🚀'
+  ];
+  let ri = 0, ci = 0, deleting = false;
+  const el = document.querySelector('.hero-role');
+  function type() {
+    const role = roles[ri];
+    if (!deleting) {
+      el.childNodes[0].textContent = role.slice(0, ++ci);
+      if (ci === role.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.childNodes[0].textContent = role.slice(0, --ci);
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(type, deleting ? 40 : 70);
+  }
+  el.innerHTML = ' <span class="cursor"></span>';
+  el.insertBefore(document.createTextNode(''), el.firstChild);
+  type();
+  // --- Matrix Effect ---
+  const canvas = document.getElementById('matrix-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+'.split('');
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(5, 8, 16, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00e5ff';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 33);
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  }
+
+  // --- Counter Animation ---
+  const counters = document.querySelectorAll('.stat-num');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetStr = entry.target.innerText;
+        const target = parseFloat(targetStr.replace(/[^0-9.]/g, ''));
+        const suffix = targetStr.replace(/[0-9.]/g, '');
+        let count = 0;
+        const duration = 1500;
+        const increment = target / (duration / 16);
+        const updateCounter = () => {
+          count += increment;
+          if (count < target) {
+            entry.target.innerText = (target % 1 === 0 ? Math.ceil(count) : count.toFixed(2)) + suffix;
+            requestAnimationFrame(updateCounter);
+          } else {
+            entry.target.innerText = targetStr;
+          }
+        };
+        updateCounter();
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  });
+  counters.forEach(counter => counterObserver.observe(counter));
+</script>
 </body>
 </html>
